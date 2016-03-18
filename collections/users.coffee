@@ -36,6 +36,10 @@ Schemas.UserProfile = new SimpleSchema(
       searchBox: true
       autolocate: true
 
+  phone_number:
+    type: String
+    label: "Phone number"
+
   country:
     type: String
     label: 'Nationality'
@@ -49,7 +53,6 @@ Schemas.User = new SimpleSchema(
     type: String
     regEx: /^[a-z0-9A-Z_]{3,15}$/
     optional: true
-
 
   emails:
     type: [Object]

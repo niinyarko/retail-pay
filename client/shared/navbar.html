@@ -33,10 +33,10 @@
               </li>
             {{else}}
               <li>
-                <a class="close-navbar" href="/sign-up">{{_ "signup"}}</a>
+                <a class="close-navbar" href="{{pathFor 'signup'}}">{{_ "signup"}}</a>
               </li>
               <li>
-                <a class="close-navbar" href="/sign-in">{{_ "login"}}</a>
+                <a class="close-navbar" href="{{pathFor 'signin'}}">{{_ "login"}}</a>
               </li>
             {{/if}}
           </ul>

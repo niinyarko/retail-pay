@@ -1,5 +1,14 @@
 # See https://github.com/meteor-useraccounts/core/blob/master/Guide.md
 
+AccountsTemplates.addField
+    _id: 'phone_number'
+    type: 'tel'
+    displayName: "Vodafone Cash Phone Number"
+    required: true
+
+AccountsTemplates.configure
+  defaultLayout: 'homeLayoutWithNavbar'
+
 AccountsTemplates.configure
   
   # Behaviour
@@ -39,6 +48,19 @@ AccountsTemplates.configure
   onSubmitHook: ->
     console.log 'submitting form'
 
-AccountsTemplates.configureRoute 'signIn'
-AccountsTemplates.configureRoute 'signUp'
 AccountsTemplates.configureRoute 'forgotPwd'
+
+AccountsTemplates.configureRoute 'signIn',
+  name: 'signin'
+  path: '/sign-in'
+  redirect: ->
+    Router.go '/admin'
+
+AccountsTemplates.configureRoute 'signUp',
+  name: 'signup'
+  path: '/signup'
+  redirect: ->
+    user = Meteor.user()
+    if user
+      Router.go '/admin'
+    return

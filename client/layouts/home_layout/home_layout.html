@@ -2,7 +2,17 @@
 	<div class="layout home-layout">
     <div class="layout home-layout">
       {{> yield }}
+      {{> footer}}
     </div>
   </div>
-  {{> footer}}
+</template>
+
+<template name="homeLayoutWithNavbar">
+  <div class="template-home-layout-with-navbar">
+    <div class="layout home-layout-with-navbar">
+      {{> navbar}}
+      {{> yield}}
+      {{> footer}}
+    </div>
+  </div>
 </template>
