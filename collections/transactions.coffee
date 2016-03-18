@@ -20,8 +20,10 @@ Schemas.Transactions = new SimpleSchema
   payee_name:
     type: String
     optional: true
+    autoform:
+      omit: true
     autoValue: ->
-      payee_id = AutoForm.getFieldValue('payee', AutoForm.getFormId())
+      payee_id = @siblingField('payee').value
       if payee_id
         payee = Payees.findOne(payee_id)
         first_name = payee?.first_name

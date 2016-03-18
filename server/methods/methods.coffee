@@ -1,6 +1,7 @@
 Meteor.methods
   createTransaction: (doc) ->
     res = Transactions.insert doc
+    res
     # @unblock()
     # Meteor.defer ->
     #   try

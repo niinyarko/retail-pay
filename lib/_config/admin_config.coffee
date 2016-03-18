@@ -13,23 +13,13 @@
 			color: 'green'
 			icon: 'money'
 			tableColumns: [
-				{ label: 'Payee', name: 'payee' }
+				{ label: 'Payee', name: 'payee_name' }
 				{ label: 'AMount Paid', name: 'amount' }
 				{ label: 'Transaction Date', name: 'createdAt'}
 			]
 			templates:
 				new: 
 					name: 'createTransaction'
-			###children: [
-				{
-					find: (comment) ->
-						Posts.find comment.doc, limit: 1
-				}
-				{
-					find: (comment) ->
-						Meteor.users.find comment.owner, limit: 1
-				}
-			]###
 	dashboard:
 		homeUrl: '/dashboard'
 	autoForm:
