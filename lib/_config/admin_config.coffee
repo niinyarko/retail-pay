@@ -17,6 +17,9 @@
 				{ label: 'AMount Paid', name: 'amount' }
 				{ label: 'Transaction Date', name: 'createdAt'}
 			]
+			templates:
+				new: 
+					name: 'createTransaction'
 			###children: [
 				{
 					find: (comment) ->

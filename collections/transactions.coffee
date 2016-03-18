@@ -13,7 +13,7 @@ Schemas.Transactions = new SimpleSchema
         Payees.find().map (c) ->
           name = c.first_name + " " + c.last_name
           {
-              label: c.first_name
+              label: name
               value: c._id
           }
 
@@ -22,6 +22,8 @@ Schemas.Transactions = new SimpleSchema
 
   createdAt:
     type: Date
+    autoform:
+      omit: true
     autoValue: ->
       if this.isInsert
         new Date()
@@ -29,6 +31,8 @@ Schemas.Transactions = new SimpleSchema
   updatedAt:
     type:Date
     optional:true
+    autoform:
+      omit: true
     autoValue: ->
       if this.isUpdate
         new Date()
