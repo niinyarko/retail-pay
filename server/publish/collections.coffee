@@ -6,3 +6,12 @@ Meteor.publish 'posts', ->
 
 Meteor.publish 'attachments', ->
 	Attachments.find()
+
+Meteor.publish 'payees', ->
+  Payees.find()
+
+Meteor.publish 'transactions', ->
+  Transactions.find()
+
+Meteor.publish 'posts', ->
+  Posts.find()
