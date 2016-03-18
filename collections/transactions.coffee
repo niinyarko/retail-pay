@@ -33,6 +33,7 @@ Schemas.Transactions = new SimpleSchema
 
   amount:
     type: Number
+    label: "Amount (GHS)"
 
   createdAt:
     type: Date

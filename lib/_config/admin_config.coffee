@@ -14,13 +14,24 @@
 			icon: 'money'
 			tableColumns: [
 				{ label: 'Payee', name: 'payee_name' }
-				{ label: 'AMount Paid', name: 'amount' }
+				{ label: 'Amount Paid', name: 'amount' }
 				{ label: 'Transaction Date', name: 'createdAt'}
 			]
 			templates:
 				new: 
 					name: 'createTransaction'
+
+		PettyCashFund:
+			color: 'yellow'
+			icon: 'money'
+			tableColumns: [
+				{ label: 'Amount (GHS)', name: 'amount' }
+				{ label: 'Created At', name: 'createdAt'}
+				{ label: 'Updated At', name: 'updatedAt' }
+			]
+
 	dashboard:
-		homeUrl: '/dashboard'
+		homeUrl: '/dashboard',
+
 	autoForm:
 		omitFields: ['createdAt', 'updatedAt']

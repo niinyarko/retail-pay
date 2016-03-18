@@ -14,6 +14,8 @@ Router.configure
 
 Router.waitOn ->
   subs.subscribe 'user'
+  subs.subscribe 'transactions'
+  subs.subscribe 'petty_cash_fund'
 
 onAfterAction = ->
   if Meteor.isClient

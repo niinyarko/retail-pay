@@ -9,3 +9,6 @@ Meteor.publish 'payees', ->
 
 Meteor.publish 'transactions', ->
   Transactions.find()
+
+Meteor.publish 'petty_cash_fund', ->
+  PettyCashFund.find()
