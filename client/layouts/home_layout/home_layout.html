@@ -2,7 +2,9 @@
 	<div class="layout home-layout">
     <div class="layout home-layout">
       {{> yield }}
+      {{#if isRouteReady}}
       {{> footer}}
+      {{/if}}
     </div>
   </div>
 </template>
@@ -12,7 +14,9 @@
     <div class="layout home-layout-with-navbar">
       {{> navbar}}
       {{> yield}}
+      {{#if isRouteReady}}
       {{> footer}}
+      {{/if}}
     </div>
   </div>
 </template>

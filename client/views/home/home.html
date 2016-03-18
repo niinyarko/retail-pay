@@ -9,7 +9,11 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav pull-right">
             <li class="active"><a href="/">Home</a></li>
-            <li><a class="btn" href="{{pathFor 'signin'}}">SIGN IN / SIGN UP</a></li>
+            {{#if User}}
+              <li><a class="btn" href="/admin">Go To Dashboard</a></li>
+            {{else}}
+              <li><a class="btn" href="{{pathFor 'signin'}}">SIGN IN / SIGN UP</a></li>
+            {{/if}}
           </ul>
         </div><!--/.nav-collapse -->
       </div>

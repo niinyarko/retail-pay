@@ -17,6 +17,18 @@ Schemas.Transactions = new SimpleSchema
               value: c._id
           }
 
+  payee_name:
+    type: String
+    optional: true
+    autoValue: ->
+      payee_id = AutoForm.getFieldValue('payee', AutoForm.getFormId())
+      if payee_id
+        payee = Payees.findOne(payee_id)
+        first_name = payee?.first_name
+        last_name = payee?.last_name
+        first_name + " " + last_name
+
+
   amount:
     type: Number
 
