@@ -1,16 +1,31 @@
 Meteor.methods
   createTransaction: (doc) ->
     res = Transactions.insert doc
-    res
-    # @unblock()
-    # Meteor.defer ->
-    #   try
-    #     result = HTTP.call('POST', 'http://testpay.vodafonecash.com.gh', params: username: '711500', password: 'hackathon2', token: 'abc1234', amount: doc.amount)
-    #     html_res = result?.content
-    #     return html_res
-    #   catch e
-    #     return false
-    #   return
 
+    payee_phone = Payees.findOne(doc.payee)?.phone_number
+
+    options1 = 
+      {
+        vendor: 711500
+        amount: doc.amount
+        phone: payee_phone
+      }
+
+    options2 = 
+      {
+        username: 711500
+        password: "hackathon2"
+        token: "abc1234"
+        amount: doc.amount
+      }
+
+    @unblock()
+    Meteor.defer ->
+      try
+        result = HTTP.call('POST', 'http://testpay.vodafonecash.com.gh/SendSMS.php', params: options1)
+        console.log result
+      catch e
+        console.log e
+      return
 
             

@@ -9,6 +9,7 @@ Schemas.Payees = new SimpleSchema
 
   phone_number:
     type: String
+    label: "Phone number (format: +233XXXXXXXXX)"
 
   createdAt:
     type: Date
