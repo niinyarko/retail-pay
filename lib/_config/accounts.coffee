@@ -13,15 +13,15 @@ AccountsTemplates.configure
   
   # Behaviour
   confirmPassword: false
-  enablePasswordChange: true
+  enablePasswordChange: false
   forbidClientAccountCreation: false
   overrideLoginErrors: true
   sendVerificationEmail: false
   lowercaseUsername: false
   
   # Appearance
-  showAddRemoveServices: true
-  showForgotPasswordLink: true
+  showAddRemoveServices: false
+  showForgotPasswordLink: false
   showLabels: true
   showPlaceholders: true
   showResendVerificationEmailLink: false
@@ -35,8 +35,8 @@ AccountsTemplates.configure
   showValidating: true
   
   # Privacy Policy and Terms of Use
-  privacyUrl: Config.privacyUrl || null
-  termsUrl: Config.termsUrl || null
+  # privacyUrl: Config.privacyUrl || null
+  # termsUrl: Config.termsUrl || null
   
   # Redirects
   homeRoutePath: Config.dashboardRoute || null
@@ -47,8 +47,6 @@ AccountsTemplates.configure
 
   onSubmitHook: ->
     console.log 'submitting form'
-
-AccountsTemplates.configureRoute 'forgotPwd'
 
 AccountsTemplates.configureRoute 'signIn',
   name: 'signin'

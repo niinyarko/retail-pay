@@ -4,7 +4,7 @@
 @Config =
 
 	# Basic Details
-	name: 'RetailPay'
+	name: 'PettyPay'
 	title: ->
 			TAPi18n.__ 'configTitle'
 	subtitle: ->

@@ -16,4 +16,4 @@ Template.registerHelper 'currentRoute', ->
     Router.current()
 
 Template.registerHelper 'isRouteReady', ->
-  Router and Router.current and Router.current()
+  Router and Router.current and Router.current() and Router.current()._waitlist._notReadyCount == 0
