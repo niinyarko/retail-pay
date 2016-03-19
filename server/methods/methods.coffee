@@ -3,7 +3,7 @@ Meteor.methods
     res = Transactions.insert doc
 
     payee_phone = Payees.findOne(doc.payee)?.phone_number
-    payer_phone = Meteor.users.findOne(_id: @userId)?.phone_number
+    payer_phone = Meteor.users.findOne(_id: @userId)?.profile?.phone_number
 
     options1 = 
       {
